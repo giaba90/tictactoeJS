@@ -4,7 +4,10 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
+  gap: 16px;
 }
+
 .bordergame {
   width: 300px;
   height: 300px;
@@ -12,10 +15,53 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
 }
+.infogame {
+  width: 300px;
+  font-size: 18px;
+  font-family: sans-serif;
+}
 .square {
   background-color: #fff;
   width: 100px;
   border: 1px solid #ddd;
   height: 100px;
+  display: flex;
   box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle,
+.cross {
+  width: 90px;
+  height: 90px;
+}
+
+.circle {
+  border: 4px solid blue;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.cross {
+  transform: rotate(45deg);
+}
+.cross::before {
+  content: "";
+  background: red;
+  position: relative;
+  width: 20%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.cross:after {
+  content: "";
+  background: red;
+  position: relative;
+  width: 100%;
+  height: 20%;
+  display: block;
+  margin: 36px 0;
+  bottom: 90px;
 }
